@@ -29,3 +29,25 @@ class Solution:
             )
 
         return result
+
+
+# Main function
+def main():
+
+    # Input values
+    nums = [2, 3, 4, 7, 9, 10]
+
+    # Create object of Solution class
+    obj = Solution()
+
+    # Call summaryRanges function
+    result = obj.summaryRanges(nums)
+
+    # Print output
+    print("Input:", nums)
+    print("Output:", result)
+
+
+# Program execution starts here
+if __name__ == "__main__":
+    main()
