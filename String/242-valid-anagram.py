@@ -1,22 +1,23 @@
 
-def isAnagram(s, t):
+class Solution(object):
+    def isAnagram(self, s, t):
 
-    if len(s) != len(t):
-        return False
-
-    count = [0] * 26
-
-    for ch in s:
-        count[ord(ch) - ord('a')] += 1
-
-    for ch in t:
-        index = ord(ch) - ord('a')
-        count[index] -= 1
-
-        if count[index] < 0:
+        if len(s) != len(t):
             return False
 
-    return True
+        count = [0] * 26
+
+        for ch in s:
+            count[ord(ch) - ord('a')] += 1
+
+        for ch in t:
+            index = ord(ch) - ord('a')
+            count[index] -= 1
+
+            if count[index] < 0:
+                return False
+
+        return True
 
 
 def main():
@@ -24,7 +25,9 @@ def main():
     s = input("Enter first string: ")
     t = input("Enter second string: ")
 
-    if isAnagram(s, t):
+    solution = Solution()
+
+    if solution.isAnagram(s, t):
         print("Output: True")
     else:
         print("Output: False")
